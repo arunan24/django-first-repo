@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'django_first_app/base.html'  %}
+{% block body_block %}
+<h1> Welcome to School list htmlpage</h1>
+<ol>
+    {% for school in school_list %}
+    <h2><li><a href="{{ school.id }}"> {{ school.nameofSchool}}</a></li></h2>
+    {% endfor %}
+</ol>
+{% endblock %}

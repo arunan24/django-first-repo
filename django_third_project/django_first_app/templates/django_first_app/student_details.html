@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'django_first_app/base.html'  %}
+{% block body_block %}
+<h1> Welcome to student details list htmlpage</h1>
+<div class="jumbotron">
+    <h1> welcome to student details page</h1>
+     <p>School name is : {{ student_detail.nameofSchool}}</p>
+    {% for student in student_detail.student.all %}
+        <p>School name is : {{ student_detail.nameofSchool}}</p>
+        <p>Name of Student: {{student.nameofStudent}}</p>
+        <p>Age of Student: {{student.ageofStuden}}</p>
+        <p>Name of School: {{student.nameofSchool}}</p>
+
+    {% endfor %}
+</div>
+<div>
+    <p><a href="{% url 'update' pk=student_detail.pk %}">Update</a></p>
+    <p><a href="{% url 'delete' pk=student_detail.pk %}">Delete</a></p>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'django_first_app/base.html'  %}
+{% block body_block %}
+<h1> Welcome to delete page</h1>
+<h1>Do you want to delete {{ school.nameofSchool}}</h1>
+<form method="POST">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger" value="Delete">
+</form>
+{% endblock %}
